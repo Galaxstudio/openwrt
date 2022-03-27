@@ -21,6 +21,7 @@ case "$FIRMWARE" in
 	avm,fritzdvbc)
 		caldata_extract "urlader" 0x198a 0x844
 		;;
+	asus,rp-ac51|\
 	comfast,cf-wr650ac-v1|\
 	comfast,cf-wr650ac-v2|\
 	devolo,magic-2-wifi|\
