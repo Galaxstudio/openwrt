@@ -803,7 +803,7 @@ define Device/linksys_e5600
   DEVICE_VENDOR := Linksys
   DEVICE_MODEL := E5600
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7663-firmware-ap \
-	kmod-mt7663-firmware-sta uboot-envtools
+	uboot-envtools
   UBINIZE_OPTS := -E 5
   IMAGES += factory.bin
   IMAGE/sysupgrade.bin := sysupgrade-tar | check-size | append-metadata
@@ -1135,13 +1135,13 @@ TARGET_DEVICES += netis_wf2881
 
 define Device/phicomm_k2p
   $(Device/dsa-migration)
-  IMAGE_SIZE := 32448k
+  IMAGE_SIZE := 16064k
   DEVICE_VENDOR := Phicomm
   DEVICE_MODEL := K2P
   DEVICE_ALT0_VENDOR := Phicomm
   DEVICE_ALT0_MODEL := KE 2P
   SUPPORTED_DEVICES += k2p
-  DEVICE_PACKAGES := kmod-mt7615e kmod-mt7615-firmware
+  DEVICE_PACKAGES := kmod-mt7615d_dbdc
 endef
 TARGET_DEVICES += phicomm_k2p
 
@@ -1237,7 +1237,7 @@ define Device/tplink_archer-a6-v3
   DEVICE_MODEL := Archer A6
   DEVICE_VARIANT := V3
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e \
-	kmod-mt7663-firmware-ap kmod-mt7663-firmware-sta
+	kmod-mt7663-firmware-ap
   TPLINK_BOARD_ID := ARCHER-A6-V3
   KERNEL := $(KERNEL_DTB) | uImage lzma
   IMAGE_SIZE := 15744k
